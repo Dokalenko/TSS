@@ -12,17 +12,14 @@ import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 
-class ShapeFactory /*setting*/
-{
+public class ShapeFactory {
     public Shape shape;
     public BasicStroke stroke = new BasicStroke(3.0f);
     public Paint paint;
-    public final int width = 25;
-    public final int height = 25;
+    public int width = 25;
+    public int height = 25;
 
-    public ShapeFactory()/*figures type*/
-    {
-        int shape_type;
+    public ShapeFactory(int shape_type) {
         switch (shape_type = 1) {
             case 1: {
                 this.shape = ShapeFactory.createStar(3, new Point(0, 0), (double)this.width / 2.0, (double)this.width / 2.0);
@@ -54,7 +51,7 @@ class ShapeFactory /*setting*/
                 throw new Error("type is nusupported");
             }
         }
-        switch (shape_type = 7) {
+        switch (shape_type = 4) {
             case 1: {
                 this.stroke = new BasicStroke(3.0f);
                 break;
